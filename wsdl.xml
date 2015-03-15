@@ -1,0 +1,348 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://WebService" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://WebService">
+<wsdl:documentation>DBServer</wsdl:documentation>
+<wsdl:types>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://WebService">
+<xs:element name="delete">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="sql" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="deleteResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getNameResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="initDBServerResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="insert">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="sql" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="insertResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="select">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="sql" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="selectResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="update">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="sql" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="updateResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="main">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="args" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="initDBServerRequest"/>
+<wsdl:message name="initDBServerResponse">
+<wsdl:part name="parameters" element="ns:initDBServerResponse"/>
+</wsdl:message>
+<wsdl:message name="deleteRequest">
+<wsdl:part name="parameters" element="ns:delete"/>
+</wsdl:message>
+<wsdl:message name="deleteResponse">
+<wsdl:part name="parameters" element="ns:deleteResponse"/>
+</wsdl:message>
+<wsdl:message name="getNameRequest"/>
+<wsdl:message name="getNameResponse">
+<wsdl:part name="parameters" element="ns:getNameResponse"/>
+</wsdl:message>
+<wsdl:message name="selectRequest">
+<wsdl:part name="parameters" element="ns:select"/>
+</wsdl:message>
+<wsdl:message name="selectResponse">
+<wsdl:part name="parameters" element="ns:selectResponse"/>
+</wsdl:message>
+<wsdl:message name="mainRequest">
+<wsdl:part name="parameters" element="ns:main"/>
+</wsdl:message>
+<wsdl:message name="insertRequest">
+<wsdl:part name="parameters" element="ns:insert"/>
+</wsdl:message>
+<wsdl:message name="insertResponse">
+<wsdl:part name="parameters" element="ns:insertResponse"/>
+</wsdl:message>
+<wsdl:message name="updateRequest">
+<wsdl:part name="parameters" element="ns:update"/>
+</wsdl:message>
+<wsdl:message name="updateResponse">
+<wsdl:part name="parameters" element="ns:updateResponse"/>
+</wsdl:message>
+<wsdl:portType name="DBServerPortType">
+<wsdl:operation name="initDBServer">
+<wsdl:input message="ns:initDBServerRequest" wsaw:Action="urn:initDBServer"/>
+<wsdl:output message="ns:initDBServerResponse" wsaw:Action="urn:initDBServerResponse"/>
+</wsdl:operation>
+<wsdl:operation name="delete">
+<wsdl:input message="ns:deleteRequest" wsaw:Action="urn:delete"/>
+<wsdl:output message="ns:deleteResponse" wsaw:Action="urn:deleteResponse"/>
+</wsdl:operation>
+<wsdl:operation name="getName">
+<wsdl:input message="ns:getNameRequest" wsaw:Action="urn:getName"/>
+<wsdl:output message="ns:getNameResponse" wsaw:Action="urn:getNameResponse"/>
+</wsdl:operation>
+<wsdl:operation name="select">
+<wsdl:input message="ns:selectRequest" wsaw:Action="urn:select"/>
+<wsdl:output message="ns:selectResponse" wsaw:Action="urn:selectResponse"/>
+</wsdl:operation>
+<wsdl:operation name="main">
+<wsdl:input message="ns:mainRequest" wsaw:Action="urn:main"/>
+</wsdl:operation>
+<wsdl:operation name="insert">
+<wsdl:input message="ns:insertRequest" wsaw:Action="urn:insert"/>
+<wsdl:output message="ns:insertResponse" wsaw:Action="urn:insertResponse"/>
+</wsdl:operation>
+<wsdl:operation name="update">
+<wsdl:input message="ns:updateRequest" wsaw:Action="urn:update"/>
+<wsdl:output message="ns:updateResponse" wsaw:Action="urn:updateResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="DBServerSoap11Binding" type="ns:DBServerPortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="delete">
+<soap:operation soapAction="urn:delete" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="initDBServer">
+<soap:operation soapAction="urn:initDBServer" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="select">
+<soap:operation soapAction="urn:select" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getName">
+<soap:operation soapAction="urn:getName" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="main">
+<soap:operation soapAction="urn:main" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="insert">
+<soap:operation soapAction="urn:insert" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="update">
+<soap:operation soapAction="urn:update" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="DBServerSoap12Binding" type="ns:DBServerPortType">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="delete">
+<soap12:operation soapAction="urn:delete" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="initDBServer">
+<soap12:operation soapAction="urn:initDBServer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="select">
+<soap12:operation soapAction="urn:select" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getName">
+<soap12:operation soapAction="urn:getName" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="main">
+<soap12:operation soapAction="urn:main" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="insert">
+<soap12:operation soapAction="urn:insert" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="update">
+<soap12:operation soapAction="urn:update" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="DBServerHttpBinding" type="ns:DBServerPortType">
+<http:binding verb="POST"/>
+<wsdl:operation name="delete">
+<http:operation location="DBServer/delete"/>
+<wsdl:input>
+<mime:content type="text/xml" part="delete"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="delete"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="initDBServer">
+<http:operation location="DBServer/initDBServer"/>
+<wsdl:input>
+<mime:content type="text/xml" part="initDBServer"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="initDBServer"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="select">
+<http:operation location="DBServer/select"/>
+<wsdl:input>
+<mime:content type="text/xml" part="select"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="select"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getName">
+<http:operation location="DBServer/getName"/>
+<wsdl:input>
+<mime:content type="text/xml" part="getName"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="getName"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="main">
+<http:operation location="DBServer/main"/>
+<wsdl:input>
+<mime:content type="text/xml" part="main"/>
+</wsdl:input>
+</wsdl:operation>
+<wsdl:operation name="insert">
+<http:operation location="DBServer/insert"/>
+<wsdl:input>
+<mime:content type="text/xml" part="insert"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="insert"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="update">
+<http:operation location="DBServer/update"/>
+<wsdl:input>
+<mime:content type="text/xml" part="update"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="update"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="DBServer">
+<wsdl:port name="DBServerHttpSoap11Endpoint" binding="ns:DBServerSoap11Binding">
+<soap:address location="http://192.168.3.122:7001/axis2/services/DBServer.DBServerHttpSoap11Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="DBServerHttpSoap12Endpoint" binding="ns:DBServerSoap12Binding">
+<soap12:address location="http://192.168.3.122:7001/axis2/services/DBServer.DBServerHttpSoap12Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="DBServerHttpEndpoint" binding="ns:DBServerHttpBinding">
+<http:address location="http://192.168.3.122:7001/axis2/services/DBServer.DBServerHttpEndpoint/"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:insertResponse xmlns:ns="http://WebService"><ns:return>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;insert&gt;
+	&lt;result&gt;OK&lt;/result&gt;
+&lt;/insert&gt;
+</ns:return></ns:insertResponse></soapenv:Body></soapenv:Envelope>
